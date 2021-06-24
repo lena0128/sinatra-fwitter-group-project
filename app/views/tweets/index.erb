@@ -1,0 +1,13 @@
+<% if logged_in? %>
+<h1>Welcome, <%= current_user.username %>!</h1>
+<h3>View Your Latest Tweets!</h3>
+<! Note that here we metions the #current_user method defined in the helper method, not the instance varaible. !>
+  <% @tweets.each do |tweet| %>
+    <ul>
+    <li><%= tweet.content %></li>
+    </ul>
+  <% end %>
+<% end %>
+
+<a href="/tweets/new">Create New Tweets</a>
+<a href="/logout">Logout</a>
